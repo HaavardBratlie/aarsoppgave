@@ -7,7 +7,7 @@ body {
     flex-direction: column; /* Make the body a flex container */
 }
 
-body::before {
+#bg::before {
     margin-top: 14vh;
     content: "";
     position: absolute;

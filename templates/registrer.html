@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Registrer deg</h1>
+<form method="POST">
+    <label>Fornavn:</label><br>
+    <input type="text" name="fornavn" required><br>
+    <label>Etternavn:</label><br>
+    <input type="text" name="etternavn" required><br>
+    <label>E-post:</label><br>
+    <input type="email" name="epost" required><br>
+    <label>Passord:</label><br>
+    <input type="password" name="passord" required><br>
+    <button type="submit">Registrer</button>
+</form>
+<a href="/login">Allerede bruker? Logg inn her</a>
+
+
+{% endblock %}
