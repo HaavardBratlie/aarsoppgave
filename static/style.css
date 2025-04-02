@@ -2,10 +2,13 @@ body {
     margin: 0;
     z-index: 1;
     position: relative;
-    min-height: 200vh; /* Ensure the body is 200vh tall */
+    min-height: 220vh; /* Ensure the body is 200vh tall */
+    display: flex;
+    flex-direction: column; /* Make the body a flex container */
 }
 
 body::before {
+    margin-top: 14vh;
     content: "";
     position: absolute;
     top: 0;
@@ -19,18 +22,46 @@ body::before {
     z-index: -1; /* Place it behind the content */
 }
 
-header{
+header {
     display: flex;
-    justify-content: space-between;
-    width: 90%;
+    justify-content: space-between; /* Space between header content */
+    align-items: center; /* Vertically center items in the header */
+    width: 90%; /* Make the header span the full width */
     position: fixed;
     z-index: 500;
-    background-color: white;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    margin-right: 5vw;
+    background-color: #f1f1f1;
+    padding: 10px 5vw; /* Add padding for spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to make it pop */
 }
 
-nav{
-    justify-content: space-evenly;
+nav {
+    display: flex; /* Make the nav a flex container */
+    justify-content: space-evenly; /* Evenly distribute the links */
+    align-items: center; /* Vertically center the links */
+    width: 50%; /* Adjust the width of the nav bar */
+    margin-left: auto; /* Push the nav bar to the right */
+}
+
+nav a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Set link color */
+    padding: 0 10px; /* Add spacing between links */
+    font-weight: bold; /* Make the links bold */
+    transition: color 0.3s ease; /* Add a hover effect */
+}
+
+nav a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+footer {
+    display: flex;
+    margin-top: auto; /* Push the footer to the bottom */
+    width: 50%; /* Ensure the footer spans the full width */
+    background-color: #f1f1f1; /* Optional: Add a background color */
+    justify-content: space-between; /* Optional: Center the footer content */
+    padding: 10px 0; /* Optional: Add padding for spacing */
+    padding-right: 30%;
+    padding-left: 20%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to make it pop */
 }
