@@ -2,9 +2,15 @@ body {
     margin: 0;
     z-index: 1;
     position: relative;
-    min-height: 220vh; /* Ensure the body is 200vh tall */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Make the body a flex container */
+    flex-direction: column;
+    background-color: #07075d;
+    font-family: 'Poppins';
+}
+
+.home {
+    min-height: 210vh;
 }
 
 #bg::before {
@@ -14,54 +20,129 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 200vh; /* Match the height of the body */
-    background-image: url('/static/bg_full_1920x2160.jpg'); /* Set the background image */
-    background-size: cover; /* Make the image cover the entire area */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-position: top center; /* Move the image to start at the top and center it horizontally */
-    z-index: -1; /* Place it behind the content */
+    height: 200vh;
+    background-image: url('/static/bg_full_1920x2160.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: -1;
 }
 
 header {
     display: flex;
-    justify-content: space-between; /* Space between header content */
-    align-items: center; /* Vertically center items in the header */
-    width: 90%; /* Make the header span the full width */
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
     position: fixed;
     z-index: 500;
     background-color: #f1f1f1;
-    padding: 10px 5vw; /* Add padding for spacing */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to make it pop */
+    padding: 2px 5vw;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav {
-    display: flex; /* Make the nav a flex container */
-    justify-content: space-evenly; /* Evenly distribute the links */
-    align-items: center; /* Vertically center the links */
-    width: 50%; /* Adjust the width of the nav bar */
-    margin-left: auto; /* Push the nav bar to the right */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
 }
 
 nav a {
-    text-decoration: none; /* Remove underline from links */
-    color: #333; /* Set link color */
-    padding: 0 10px; /* Add spacing between links */
-    font-weight: bold; /* Make the links bold */
-    transition: color 0.3s ease; /* Add a hover effect */
+    text-decoration: none;
+    color: #333;
+    padding: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #007BFF; /* Change color on hover */
+    color: #007BFF;
 }
 
 footer {
     display: flex;
-    margin-top: auto; /* Push the footer to the bottom */
-    width: 50%; /* Ensure the footer spans the full width */
-    background-color: #f1f1f1; /* Optional: Add a background color */
-    justify-content: space-between; /* Optional: Center the footer content */
-    padding: 10px 0; /* Optional: Add padding for spacing */
+    margin-top: auto;
+    width: 50%;
+    background-color: #f1f1f1;
+    justify-content: space-between;
+    padding: 10px 0;
     padding-right: 30%;
     padding-left: 20%;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to make it pop */
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+.login{
+    min-height: 15vh;
+}
+
+.registrer{
+    min-height: 15vh;
+}
+
+.form {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.form h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.form label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+    margin-bottom: -8px;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+}
+
+.cv{
+    margin-top: 5vh;
+    text-decoration: underline;
+    color: black;
+
+}
+.cv:hover{
+    color: #0056b3;
 }
