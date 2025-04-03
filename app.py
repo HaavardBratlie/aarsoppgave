@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, session
 import mysql.connector
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Replace with a strong secret key
 
 def get_db_connection():
     return mysql.connector.connect(
@@ -34,7 +35,9 @@ init_db()
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    if 'user_id' in session:  # Check if the user is logged in
+        return render_template('index.html', logged_in=True)
+    return render_template('index.html', logged_in=False)
 
 @app.route('/registrer', methods=['GET', 'POST'])
 def registrer_page():
@@ -61,7 +64,7 @@ def registrer_page():
             if conn:
                 conn.close()
 
-        return redirect(url_for('login_page')) #melling om registrerring lykkes
+        return render_template("login.html") #melling om registrerring lykkes
 
     return render_template('registrer.html')
 
@@ -79,11 +82,23 @@ def login_page():
         conn.close()
 
         if user:
-            return render_template('index.html')#legg inn melling innlogging lykkes
+            session['user_id'] = user['id']  # Store user ID in session
+            session['user_name'] = user['fornavn']  # Store user's first name in session
+            return render_template("index.html")  # Redirect to home page
         else:
-            
-            return render_template('login.html')#legg inn melling innlogging feilet
+            return render_template('login.html')  # Add error message for incorrect login
     return render_template('login.html')
 
-if __name__ == '__main__':
+@app.route('/logout')
+def logout():
+    session.clear()  # Clear all session data
+    return render_template("index.html")  # Redirect to home page after logout
+
+@app.context_processor
+def inject_user():
+    user_id = session.get('user_id')  # Get user_id from session
+    user_name = session.get('user_name')  # Get user_name from session
+    return {'user_id': user_id, 'user_name': user_name}
+
+if __name__ == '__main__':  
     app.run(debug=True, host="0.0.0.0", port=2200)
