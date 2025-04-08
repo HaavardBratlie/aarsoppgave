@@ -39,6 +39,18 @@ def home():
         return render_template('index.html', logged_in=True)
     return render_template('index.html', logged_in=False)
 
+@app.route('/ommeg')
+def ommeg_page():
+    if 'user_id' in session:
+        return render_template('ommeg.html', logged_in=True)
+    return render_template('ommeg.html', logged_in=False)
+
+@app.route('/quiz')
+def quiz_page():
+    if 'user_id' in session:
+        return render_template('quiz.html', logged_in=True)
+    return render_template('quiz.html', logged_in=False)
+
 @app.route('/registrer', methods=['GET', 'POST'])
 def registrer_page():
     if request.method == 'POST':
