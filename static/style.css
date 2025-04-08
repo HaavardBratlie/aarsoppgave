@@ -151,7 +151,7 @@ footer {
 .box_layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 0 20px;
     justify-items: center;
     align-items: center;
     margin: 20px 0;
@@ -160,10 +160,10 @@ footer {
 .box1, .box2 {
     width: 100%;
     max-width: 200px;
-    padding: 20px;
+    padding: 40px 200px;
     text-align: center;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
@@ -180,4 +180,52 @@ footer {
 .box1:hover, .box2:hover {
     transform: scale(1.05);
     background-color: #C0C0C0;
+}
+
+#result{
+    color: white;
+}
+
+.question{
+    background-color: #F2F0EF;
+    color: #07075d;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    width: 60%;
+}
+
+.ommeg h1{
+    color: white;
+}
+
+.ommeg {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    width: 60%;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #07075d;
+    text-decoration: none;
+    padding: 15px 30px; 
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #07075d;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 10px;
+}
+
+.btn:hover {
+    background-color: #D3D3D3;
+}
+
+#startButton{
+    display: block; /* Make it a block element to center it */
+    margin: 20px auto; /* Center horizontally and add vertical spacing */
+    text-align: center; /* Center the text inside the button */
 }
