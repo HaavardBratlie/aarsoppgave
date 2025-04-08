@@ -71,11 +71,12 @@ footer {
     padding-left: 20%;
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
-.login{
+
+.login {
     min-height: 15vh;
 }
 
-.registrer{
+.registrer {
     min-height: 15vh;
 }
 
@@ -137,12 +138,46 @@ footer {
     background-color: #0056b3;
 }
 
-.cv{
+.cv {
     margin-top: 5vh;
     text-decoration: underline;
     color: black;
-
 }
-.cv:hover{
+
+.cv:hover {
     color: #0056b3;
+}
+
+.box_layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.box1, .box2 {
+    width: 100%;
+    max-width: 200px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.box1 {
+    background-color: #F2F0EF;
+}
+
+.box2 {
+    background-color: #D3D3D3;
+}
+
+.box1:hover, .box2:hover {
+    transform: scale(1.05);
+    background-color: #C0C0C0;
 }
