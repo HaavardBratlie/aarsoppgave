@@ -44,3 +44,46 @@ function answerQuestion(answer) {
         document.getElementById("question" + currentQuestion).style.display = "block";
     }
 }
+
+//-----------------------------------------------------
+
+let currentQuestion2 = 1;
+let score2 = 0;
+
+function startQuiz2() {
+    document.getElementById("startButton2").style.display = "none";
+    document.getElementById("quizForm2").style.display = "block";
+    document.getElementById("question2_1").style.display = "block";
+    document.getElementById("nextButton2").style.display = "inline-block";
+}
+
+function answerQuestion2(answer) {
+    if (currentQuestion2 === 1 && answer === "IT Utvikling") {
+        score2++;
+    }
+    if (currentQuestion2 === 2 && answer === "HTML, css, js, flask") {
+        score2++;
+    }
+    if (currentQuestion2 === 3 && answer === "Maria DB") {
+        score2++;
+    }
+
+    document.getElementById("question2_" + currentQuestion2).style.display = "none";
+
+    if (currentQuestion2 === 3) {
+        const resultText2 = "Du fikk " + score2 + " av 3 riktig";
+        document.getElementById("result").textContent = resultText2;
+        fetch('/submit_result', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'score=' + score2
+        });
+
+        document.getElementById("nextButton2").style.display = "none";
+    } else {
+        currentQuestion2++;
+        document.getElementById("question2_" + currentQuestion2).style.display = "block";
+    }
+}

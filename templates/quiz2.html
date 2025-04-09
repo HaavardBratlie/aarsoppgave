@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="registrer"></div>
+
+<div>
+    <h2 id="result"></h2>
+</div>
+<div>
+    <button id="startButton2" onclick="startQuiz2()" class="btn">Spill IT QUIZ!</button>
+</div>
+
+<form id="quizForm2" style="display:none;" onsubmit="event.preventDefault();">
+    <div id="question2_1" style="display:none;">
+        <h1 class="question"><label for="svar2_1">Hvilket fagbrev vil Haavard ta?</label><br></h1>
+        <div class="box_layout">
+            <h2 onclick="answerQuestion2('IT Utvikling')" class="box1">IT Utvikling</h2>
+            <h2 onclick="answerQuestion2('IT Drift')" class="box2">IT Drift</h2>
+        </div>
+    </div>
+    <div id="question2_2" style="display:none;">
+        <h1 class="question"><label for="svar2_2">Hvilke kodespråk bruker Haavard?</label><br></h1>
+        <div class="box_layout">
+            <h2 onclick="answerQuestion2('HTML, css, php')" class="box1">HTML, css, php</h2>
+            <h2 onclick="answerQuestion2('HTML, css, js, flask')" class="box2">HTML, css, js, flask</h2>
+            <h2 onclick="answerQuestion2('React, Typescript')" class="box2">React, Typescript</h2>
+            <h2 onclick="answerQuestion2('HTML, css, Python')" class="box1">HTML, css, Python</h2>
+        </div>
+    </div>
+    <div id="question2_3" style="display:none;">
+        <h1 class="question"><label for="svar2_3">Hvilken Database bruker Haavard?</label><br></h1>
+        <div class="box_layout">
+            <h2 onclick="answerQuestion2('SQlite')" class="box1">SQlite</h2>
+            <h2 onclick="answerQuestion2('Maria DB')" class="box2">Maria DB</h2>
+            <h2 onclick="answerQuestion2('PostgreSql')" class="box2">PostgreSql</h2>
+            <h2 onclick="answerQuestion2('Ingen Database')" class="box1">Ingen Database</h2>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
