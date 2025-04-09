@@ -45,6 +45,18 @@ def ommeg_page():
         return render_template('ommeg.html', logged_in=True)
     return render_template('ommeg.html', logged_in=False)
 
+@app.route('/innhold')
+def innhold_page():
+    if 'user_id' in session:
+        return render_template('innhold.html', logged_in=True)
+    return render_template('innhold.html', logged_in=False)
+
+@app.route('/quiz_hub')
+def quiz_hub_page():
+    if 'user_id' in session:
+        return render_template('quiz_hub.html', logged_in=True)
+    return render_template('quiz_hub.html', logged_in=False)
+
 @app.route('/quiz')
 def quiz_page():
     if 'user_id' in session:
