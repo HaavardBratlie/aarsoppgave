@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect, url_for
 import mysql.connector
+import bcrypt
 
 app = Flask(__name__)
 app.secret_key = 'abc123'
@@ -77,6 +78,8 @@ def registrer_page():
         epost = request.form['epost']
         passord = request.form['passord']
 
+        hashed_password = bcrypt.hashpw(passord.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
         conn = None
         cursor = None
         try:
@@ -85,7 +88,7 @@ def registrer_page():
             cursor.execute('''
                 INSERT INTO brukere (fornavn, etternavn, epost, passord)
                 VALUES (%s, %s, %s, %s)
-            ''', (fornavn, etternavn, epost, passord))
+            ''', (fornavn, etternavn, epost, hashed_password))
             conn.commit()
             
         finally:
@@ -94,7 +97,7 @@ def registrer_page():
             if conn:
                 conn.close()
 
-        return render_template("login.html") #melling om registrerring lykkes
+        return redirect(url_for("login_page")) #melling om registrerring lykkes
 
     return render_template('registrer.html')
 
@@ -106,12 +109,12 @@ def login_page():
 
         conn = get_db_connection()
         cursor = conn.cursor(dictionary=True)
-        cursor.execute('SELECT * FROM brukere WHERE epost = %s AND passord = %s', (epost, passord))
+        cursor.execute('SELECT * FROM brukere WHERE epost = %s', (epost,))
         user = cursor.fetchone()
         cursor.close()
         conn.close()
 
-        if user:
+        if user and bcrypt.checkpw(passord.encode('utf-8'), user['passord'].encode('utf-8')):
             session['user_id'] = user['id']
             session['user_name'] = user['fornavn']
             return render_template("index.html")
