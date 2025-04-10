@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>tabell</h1>
+<div class="tabell-container">
+    <!-- Tabell for Quiz 1 -->
+    <div class="tabell">
+        <h2>Fritids QUIZ</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fornavn</th>
+                    <th>Etternavn</th>
+                    <th>Best Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in tabell_quiz1 %}
+                <tr>
+                    <td>{{ entry.fornavn }}</td>
+                    <td>{{ entry.etternavn }}</td>
+                    <td>{{ entry.best_score }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Tabell for Quiz 2 -->
+    <div class="tabell">
+        <h2>IT QUIZ</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fornavn</th>
+                    <th>Etternavn</th>
+                    <th>Best Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in tabell_quiz2 %}
+                <tr>
+                    <td>{{ entry.fornavn }}</td>
+                    <td>{{ entry.etternavn }}</td>
+                    <td>{{ entry.best_score }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

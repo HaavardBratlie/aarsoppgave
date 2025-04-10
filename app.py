@@ -25,8 +25,19 @@ def init_db():
             etternavn VARCHAR(255) NOT NULL,
             epost VARCHAR(255) NOT NULL UNIQUE,
             passord VARCHAR(255) NOT NULL
-            )
-''')
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS quiz_scores (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT NOT NULL,
+            quiz_name VARCHAR(255) NOT NULL,
+            score INT NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES brukere(id)
+        )
+    ''')
+
     conn.commit()
     cursor.close()
     conn.close()
@@ -132,6 +143,89 @@ def inject_user():
     user_id = session.get('user_id')
     user_name = session.get('user_name')
     return {'user_id': user_id, 'user_name': user_name}
+
+
+@app.route('/tabell')
+def tabell():
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    # Fetch tabell for Quiz 1
+    cursor.execute('''
+        SELECT b.fornavn, b.etternavn, MAX(q.score) AS best_score
+        FROM quiz_scores q
+        JOIN brukere b ON q.user_id = b.id
+        WHERE q.quiz_name = 'quiz1'
+        GROUP BY b.id
+        ORDER BY best_score DESC
+    ''')
+    tabell_quiz1 = cursor.fetchall()
+
+    # Fetch tabell for Quiz 2
+    cursor.execute('''
+        SELECT b.fornavn, b.etternavn, MAX(q.score) AS best_score
+        FROM quiz_scores q
+        JOIN brukere b ON q.user_id = b.id
+        WHERE q.quiz_name = 'quiz2'
+        GROUP BY b.id
+        ORDER BY best_score DESC
+    ''')
+    tabell_quiz2 = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template('tabell.html', tabell_quiz1=tabell_quiz1, tabell_quiz2=tabell_quiz2)
+
+@app.route('/submit_result', methods=['POST'])
+def submit_result():
+    if 'user_id' not in session:
+        return "Unauthorized", 401
+
+    user_id = session['user_id']
+    score = request.form.get('score')
+    quiz_name = "quiz1"
+
+    if score is None:
+        return "Score not provided", 400
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT INTO quiz_scores (user_id, quiz_name, score)
+        VALUES (%s, %s, %s)
+        ON DUPLICATE KEY UPDATE score = GREATEST(score, VALUES(score))
+    ''', (user_id, quiz_name, score))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return "Score submitted successfully", 200
+
+@app.route('/submit_result2', methods=['POST'])
+def submit_result2():
+    if 'user_id' not in session:
+        return "Unauthorized", 401
+
+    user_id = session['user_id']
+    score = request.form.get('score')
+    quiz_name = "quiz2"
+
+    if score is None:
+        return "Score not provided", 400
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+        INSERT INTO quiz_scores (user_id, quiz_name, score)
+        VALUES (%s, %s, %s)
+        ON DUPLICATE KEY UPDATE score = GREATEST(score, VALUES(score))
+    ''', (user_id, quiz_name, score))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+    return "Score submitted successfully", 200
 
 if __name__ == '__main__':  
     app.run(debug=True, host="0.0.0.0", port=2200)

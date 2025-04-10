@@ -237,3 +237,59 @@ footer {
     margin: 20px auto; /* Center horizontally and add vertical spacing */
     text-align: center; /* Center the text inside the button */
 }
+
+/* Tabell styling */
+.tabell-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #07075d; /* Dark blue background */
+    border-radius: 8px;
+}
+
+.tabell {
+    width: 45%;
+    background-color: #ffffff; /* White background for each table */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tabell h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #07075d; /* Dark blue text for headings */
+}
+
+.tabell table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.tabell th, .tabell td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.tabell th {
+    background-color: #F2F0EF; /* Off-white for table headers */
+    color: #07075d; /* Dark blue text for headers */
+    font-weight: bold;
+}
+
+.tabell td {
+    background-color: #ffffff; /* White for table cells */
+    color: #07075d; /* Dark blue text for table cells */
+}
+
+.tabell tr:nth-child(even) td {
+    background-color: #F2F0EF; /* Off-white for alternating rows */
+}
+
+.tabell tr:hover td {
+    background-color: #D3D3D3; /* Light gray for hover effect */
+}
