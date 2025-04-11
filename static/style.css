@@ -293,3 +293,12 @@ footer {
 .tabell tr:hover td {
     background-color: #D3D3D3; /* Light gray for hover effect */
 }
+
+.error-message {
+    color: darkred;
+    background-color: #D3D3D3;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+}

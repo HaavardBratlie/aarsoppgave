@@ -48,38 +48,38 @@ init_db()
 @app.route('/')
 def home():
     if 'user_id' in session:
-        return render_template('index.html', logged_in=True)
-    return render_template('index.html', logged_in=False)
+        return render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/ommeg')
 def ommeg_page():
     if 'user_id' in session:
-        return render_template('ommeg.html', logged_in=True)
-    return render_template('ommeg.html', logged_in=False)
+        return render_template('ommeg.html')
+    return render_template('ommeg.html')
 
 @app.route('/innhold')
 def innhold_page():
     if 'user_id' in session:
-        return render_template('innhold.html', logged_in=True)
-    return render_template('innhold.html', logged_in=False)
+        return render_template('innhold.html')
+    return render_template('innhold.html')
 
 @app.route('/quiz_hub')
 def quiz_hub_page():
-    if 'user_id' in session:
-        return render_template('quiz_hub.html', logged_in=True)
-    return render_template('quiz_hub.html', logged_in=False)
+    if 'user_id' not in session:
+        return render_template('login.html', error="Du må logge inn for å spille quiz")
+    return render_template('quiz_hub.html')
 
 @app.route('/quiz')
 def quiz_page():
     if 'user_id' in session:
-        return render_template('quiz.html', logged_in=True)
-    return render_template('quiz.html', logged_in=False)
+        return render_template('quiz.html')
+    return render_template('quiz.html')
 
 @app.route('/quiz2')
 def quiz2_page():
     if 'user_id' in session:
-        return render_template('quiz2.html', logged_in=True)
-    return render_template('quiz2.html', logged_in=False)
+        return render_template('quiz2.html')
+    return render_template('quiz2.html')
 
 @app.route('/registrer', methods=['GET', 'POST'])
 def registrer_page():
