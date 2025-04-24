@@ -132,6 +132,10 @@ pip install bcrypt
 Nå er Prosjektet klar for bruk
 
 ## Hvordan kjøre prosjektet
+_Denne brukerveiledningen går ut ifra at du har fullført alle punktene over_
+
+_Hvis du lurer på hvordan man åpner VS Code kan du se steg 1 av **"Hva som trengs til å kjøre"**._
+
 
 ## Hvordan navigere nettstedet
 Når man åpner siden kommer man til hjemmesiden. Der er det en header med linker for **_Innhold_**, **_Logg inn_** og **_Registrer_**.
