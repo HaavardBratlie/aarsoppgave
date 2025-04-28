@@ -66,7 +66,8 @@ def innhold_page():
 @app.route('/quiz_hub')
 def quiz_hub_page():
     if 'user_id' not in session:
-        return render_template('login.html', error="Du må logge inn for å spille quiz")
+        session["tried_to_quiz"] = True
+        return redirect(url_for('login_page'))
     return render_template('quiz_hub.html')
 
 @app.route('/quiz')
@@ -131,6 +132,10 @@ def login_page():
             return render_template("index.html")
         else:
             return render_template('login.html')  # Add error message for incorrect login
+    if not session.get('user_id'):
+        if session.get("tried_to_quiz"):
+            session["tried_to_quiz"] = False
+            return render_template('login.html', error="Du må logge inn for å spille quiz")
     return render_template('login.html')
 
 @app.route('/logout')

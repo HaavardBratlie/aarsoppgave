@@ -3,9 +3,11 @@
 
 <div class="login"></div>
 
+{% if error %}
 <div class="error-message">
     <h3>{{ error }}</h3>
 </div>
+{% endif %}
 
 <div class="form">
     <h1>Logg inn</h1>
