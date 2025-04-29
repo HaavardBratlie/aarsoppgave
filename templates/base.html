@@ -11,11 +11,8 @@
 <body>
     
     <header>
-        {% if user_name %}
-        <h1>Hei {{ user_name }}!</h1>
-        {% else %}
-        <h1>Velkommen til min side!</h1>
-        {% endif %}
+        <img src="/static/logo.png" alt="Haavard Bratlie portefølje">
+        
 
         <nav class="nav">
             <a href="/">Hjem</a>
@@ -29,6 +26,11 @@
             {% endif %}
             
         </nav>
+        {% if user_name %}
+        <h1>Hei {{ user_name }}!</h1>
+        {% else %}
+        <h1>Velkommen til min side!</h1>
+        {% endif %}
     </header>
     
     {% block content %}

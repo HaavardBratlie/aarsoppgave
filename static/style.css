@@ -2,7 +2,7 @@ body {
     margin: 0;
     z-index: 1;
     position: relative;
-    min-height: 100vh;
+    min-height: 290vh;
     display: flex;
     flex-direction: column;
     background-color: #07075d;
@@ -16,6 +16,11 @@ h1 {
     min-height: 210vh;
 }
 
+img{
+    height: auto;
+    width: 14%;
+}
+
 #bg::before {
     margin-top: 14vh;
     content: "";
@@ -23,7 +28,7 @@ h1 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 200vh;
+    height: 250vh;
     background-image: url('/static/bg_full_1920x2160.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -35,11 +40,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: auto;
     position: fixed;
     z-index: 500;
     background-color: #f1f1f1;
-    padding: 2px 5vw;
+    padding: 2px 2vw;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
