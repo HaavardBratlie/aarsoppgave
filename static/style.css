@@ -8,6 +8,9 @@ body {
     background-color: #07075d;
     font-family: 'Poppins';
 }
+h1 {
+    font-family: 'Merriweather';
+}
 
 .home {
     min-height: 210vh;
@@ -50,14 +53,14 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #333333;
     padding: 0 10px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #007BFF;
+    color: #0056b3;
 }
 
 footer {
@@ -100,7 +103,7 @@ footer {
 .form label {
     display: block;
     font-weight: bold;
-    color: #555;
+    color: #555555;
     text-align: left;
     margin-bottom: -8px;
 }
@@ -109,20 +112,20 @@ footer {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #d3d3d3;
     border-radius: 4px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
 .form input:focus {
-    border-color: #007BFF;
+    border-color: #0056b3;
     outline: none;
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
 .form button {
-    background-color: #007BFF;
+    background-color: #0056b3;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -135,7 +138,7 @@ footer {
 }
 
 .form button:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
 }
 
 .cv {
@@ -170,7 +173,7 @@ footer {
 }
 
 .box1 {
-    background-color: #F2F0EF;
+    background-color: #f1f1f1;
 }
 
 .box2 {
@@ -195,7 +198,7 @@ footer {
 }
 
 .question {
-    background-color: #F2F0EF;
+    background-color: #f1f1f1;
     color: #07075d;
     text-align: center;
     margin: 20px auto;
@@ -233,24 +236,23 @@ footer {
 }
 
 #startButton {
-    display: block; /* Make it a block element to center it */
-    margin: 20px auto; /* Center horizontally and add vertical spacing */
-    text-align: center; /* Center the text inside the button */
+    display: block;
+    margin: 20px auto;
+    text-align: center;
 }
 
-/* Tabell styling */
 .tabell-container {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
     padding: 20px;
-    background-color: #07075d; /* Dark blue background */
+    background-color: #07075d;
     border-radius: 8px;
 }
 
 .tabell {
     width: 45%;
-    background-color: #ffffff; /* White background for each table */
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -259,7 +261,7 @@ footer {
 .tabell h2 {
     text-align: center;
     margin-bottom: 10px;
-    color: #07075d; /* Dark blue text for headings */
+    color: #07075d;
 }
 
 .tabell table {
@@ -269,29 +271,29 @@ footer {
 }
 
 .tabell th, .tabell td {
-    border: 1px solid #ddd;
+    border: 1px solid #f1f1f1;
     padding: 8px;
     text-align: center;
     font-size: 16px;
 }
 
 .tabell th {
-    background-color: #F2F0EF; /* Off-white for table headers */
-    color: #07075d; /* Dark blue text for headers */
+    background-color: #f1f1f1;
+    color: #07075d;
     font-weight: bold;
 }
 
 .tabell td {
-    background-color: #ffffff; /* White for table cells */
-    color: #07075d; /* Dark blue text for table cells */
+    background-color: #ffffff;
+    color: #07075d;
 }
 
 .tabell tr:nth-child(even) td {
-    background-color: #F2F0EF; /* Off-white for alternating rows */
+    background-color: #f1f1f1;
 }
 
 .tabell tr:hover td {
-    background-color: #D3D3D3; /* Light gray for hover effect */
+    background-color: #D3D3D3;
 }
 
 .error-message {
@@ -301,4 +303,116 @@ footer {
     margin: 10px 0;
     border-radius: 5px;
     text-align: center;
+}
+
+.designmanual-box {
+    margin: 5vh 0;
+    background-color: #ffffff;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto; 
+    border-radius: 40px;
+    padding-bottom: 5vh;
+}
+
+.designmanual-box h1, h2{
+    margin: 3vw 10vw 1vw;
+}
+
+#box-0056b3 {
+    width: 10vw;
+    height: 10vh;
+    background-color: #0056b3;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+#box-007bff {
+    width: 10vw;
+    height: 10vh;
+    background-color: #007bff;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+#box-07075d {
+    width: 10vw;
+    height: 10vh;
+    background-color: #07075d;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+#box-333333 {
+    width: 10vw;
+    height: 10vh;
+    background-color: #333333;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+#box-555555{
+    width: 10vw;
+    height: 10vh;
+    background-color: #555555;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+#box-c0c0c0{
+    width: 10vw;
+    height: 10vh;
+    background-color: #C0C0C0;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+#box-d3d3d3{
+    width: 10vw;
+    height: 10vh;
+    background-color: #D3D3D3;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+#box-f1f1f1{
+    width: 10vw;
+    height: 10vh;
+    background-color: #f1f1f1;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+#box-ffffff{
+    width: 10vw;
+    height: 10vh;
+    background-color: #ffffff;
+    border: 2px solid black;
+    margin: 0 10vw;
+}
+
+.color-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.color-box div {
+    margin-right: 10px;
+}
+
+.color-box p {
+    margin: 0;
+    font-size: 16px;
+    color: #333333;
+}
+
+.font-1{
+    font-family: 'Marriweather';
+    margin-top: -2vh;
+}
+
+.font-2{
+    font-family: 'Poppins';
+    margin-top: -2vh;
 }

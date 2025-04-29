@@ -232,5 +232,9 @@ def submit_result2():
 
     return "Score submitted successfully", 200
 
+@app.route('/designprofil')
+def designprofil_page():
+    return render_template('designprofil.html')
+
 if __name__ == '__main__':  
     app.run(debug=True, host="0.0.0.0", port=2200)
