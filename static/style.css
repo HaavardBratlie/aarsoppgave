@@ -395,6 +395,7 @@ footer {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    margin-top: 3vh;
 }
 
 .color-box div {
@@ -415,4 +416,20 @@ footer {
 .font-2{
     font-family: 'Poppins';
     margin-top: -2vh;
+}
+
+.underline{
+    height: 0.4vh;
+    margin-top: -3.5vh;
+    width: 8vw;
+    margin-left: 10vw;
+    background-color: black;
+}
+
+.underline2 {
+    height: 0.4vh;
+    margin-top: -3.5vh;
+    width: 6.1vw;
+    margin-left: 10vw;
+    background-color: black;
 }
