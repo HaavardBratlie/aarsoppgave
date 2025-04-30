@@ -8,6 +8,36 @@ body {
     background-color: #07075d;
     font-family: 'Poppins';
 }
+
+.bg img{
+    margin-top: 14vh;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: -1;
+}
+
+.bg2 img{
+    margin-top: 20vh;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250vh;
+    background-image: url('/static/bg_full_1920x2160.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: -1;
+}
+
 h1 {
     font-family: 'Merriweather';
 }
@@ -18,7 +48,7 @@ h1 {
 
 img{
     height: auto;
-    width: 14%;
+    width: 20vh;
 }
 
 #bg::before {
@@ -46,6 +76,8 @@ header {
     background-color: #f1f1f1;
     padding: 2px 2vw;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 96%;
 }
 
 nav {
@@ -167,10 +199,10 @@ footer {
 
 .box1, .box2 {
     width: 100%;
-    max-width: 200px;
+    max-width: 35%;
     padding: 40px 200px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 8px; 
     font-size: 22px;
     font-weight: bold;
     cursor: pointer;
@@ -236,7 +268,21 @@ footer {
     margin: 10px;
 }
 
-.btn:hover {
+.btn2 {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #07075d;
+    text-decoration: none;
+    padding: 10vh 20vh; 
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid #07075d;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 30vh;
+}
+
+.btn:hover, .btn2:hover {
     background-color: #D3D3D3;
 }
 
@@ -320,7 +366,7 @@ footer {
     padding-bottom: 5vh;
 }
 
-.designmanual-box h1, h2{
+.designmanual-box h1, .designmanual-box h2 {
     margin: 3vw 10vw 1vw;
 }
 
