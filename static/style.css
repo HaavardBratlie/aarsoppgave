@@ -483,3 +483,25 @@ footer {
     margin-left: 10vw;
     background-color: black;
 }
+
+.ommeg-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-top: 5vh;
+    font-family: 'Merriweather', serif;
+}
+
+.ommeg-box {
+    background-color: #ffffff; /* Lys bakgrunnsfarge for kontrast */
+    color: #07075d; /* Mørk tekstfarge for god kontrast */
+    margin: 5vh auto; /* Sentraliser boksen vertikalt og horisontalt */
+    padding: 20px; /* Gi litt luft rundt teksten */
+    width: 80%; /* Boksen tar opp 80% av bredden */
+    max-width: 800px; /* Maks bredde for store skjermer */
+    border-radius: 10px; /* Runde hjørner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Myk skygge for dybde */
+    text-align: left; /* Teksten er venstrejustert */
+    font-family: 'Poppins', sans-serif; /* Moderne font */
+    line-height: 1.6; /* Bedre lesbarhet */
+}
